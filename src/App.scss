@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  .left{
+    border: 1px solid;
+    width: 200px;
+  }
+  .right{
+    width: calc(100vw - 200px);
+    min-height: 100vh;
+    overflow: scroll;
+    &::-webkit-scrollbar,&::-webkit-scrollbar-thumb{
+      height: 0;
+      width: 0;
+    }
+    .node {
+      width: fit-content;
+      background-color: rgb(255, 255, 255);
+      .title{
+        position: sticky;
+        top: 0;
+        border: 1px solid;
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: #ffffff;
+        z-index: 999;
+        .tn {
+          flex-shrink: 0;
+          border: 1px solid;
+          width: 50px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          user-select: none;
+          border-collapse:collapse;
+          background-color: #fff;
+        }
+      }
+      
+      .nn{
+        position: relative;
+        height: 30px;
+        padding: 2px 0;
+        border-bottom: 1px solid;
+        .nnn{
+          position: absolute;
+          left: 20px;
+          width: 50px;
+          height: 25px;
+          border-radius: 2px;
+          background-color: rgba(56, 19, 165, 0.378);
+          .l{
+            cursor: col-resize;
+            width: 4px;
+            left: -2px;
+            border-radius: 2px;
+            top: 0;
+            bottom: 0;
+            height: 15px;
+            margin: auto;
+            position: absolute;
+            background-color: #1becf3;
+          }
+          .r{
+            cursor: col-resize;
+            width: 4px;
+            right: -2px;
+            border-radius: 2px;
+            top: 0;
+            bottom: 0;
+            height: 15px;
+            margin: auto;
+            position: absolute;
+            background-color: #1becf3;
+          }
+          .c{
+            user-select: none;
+            cursor: pointer;
+            color: #ffffff;
+            padding: 0px 4px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
+}
