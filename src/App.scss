@@ -8,12 +8,12 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  .left{
-    border: 1px solid;
-    width: 200px;
-  }
+  // .left{
+  //   border: 1px solid;
+  //   width: 200px;
+  // }
   .right{
-    width: calc(100vw - 200px);
+    width: calc(100vw);
     min-height: 100vh;
     overflow: scroll;
     &::-webkit-scrollbar,&::-webkit-scrollbar-thumb{
@@ -26,6 +26,7 @@
       .title{
         position: sticky;
         top: 0;
+        height: 30px;
         border: 1px solid;
         display: flex;
         flex-wrap: nowrap;
@@ -35,8 +36,8 @@
           flex-shrink: 0;
           border: 1px solid;
           width: 50px;
-          height: 25px;
-          line-height: 25px;
+          height: 30px;
+          line-height: 30px;
           text-align: center;
           user-select: none;
           border-collapse:collapse;
@@ -49,6 +50,11 @@
         height: 30px;
         padding: 2px 0;
         border-bottom: 1px solid;
+        .nnl{
+          width: 200px;
+          float: left;
+          border-right: 1px solid;
+        }
         .nnn{
           position: absolute;
           left: 20px;

@@ -11,12 +11,14 @@ function GraphNode() {
     window.onmousemove = (e: globalThis.MouseEvent) => {
       if (!nnn.current) return
       const xx = e.x - x
-      nnn.current.style.left = left + xx + 'px'
+      let l = left + xx
+      l = l < 230 ? 230 : l
+      nnn.current.style.left = l + 'px'
     }
     window.onmouseup = () => {
       window.onmousemove = null
     }
-  },[nnn])
+  }, [nnn])
   const handleMouseDownl = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
     if (!nnn.current) return
     let { x, y } = e.nativeEvent
@@ -50,7 +52,7 @@ function GraphNode() {
     }
   }
   return <>
-    <div className='nnn' style={{ width: 400,left: 30 }} ref={nnn}>
+    <div className='nnn' style={{ width: 400, left: 230 }} ref={nnn}>
       <div className='l' onMouseDown={(e) => handleMouseDownl(e)}></div>
       <div className='r' onMouseDown={(e) => handleMouseDownr(e)}></div>
       <div className='c' onMouseDown={(e) => handleMouseDown(e)}>这是文字描述</div>
@@ -63,7 +65,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className='left'></div>
       <div className='right'>
         <div className='node'>
           <div className='title'>
@@ -71,87 +72,7 @@ function App() {
           </div>
           <div className='content-box'>
             <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
-              <GraphNode />
-            </div>
-            <div className='nn'>
+              <div className='nnl'>这是节点1</div>
               <GraphNode />
             </div>
             <div className='nn'>
